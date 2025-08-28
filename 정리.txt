@@ -1,0 +1,31 @@
+0. 회사와 연관된 Rest API 설계 프로젝트
+ 주제 고민중인데 인사, 매출 (환율 api도 사용?), 일정 정리 그런 api
+
+1. 첫째날
+Rest API를 왜 배워야 하는가?
+ -> 서버에게 요청을 간단하게 보내기 위해서
+ 전제조건 : 대규모 시스템에서 여러가지 종류와 표준화되지 않았던 요청에 대해서
+               정리하고 쉽게 관리하기 위해
+
+http://localhost:5090/swagger/index.html
+
+MVC 패턴이란 Razor 기반 UI를 제공하는 View와 요청을 처리하고 View 또는 Data를 반환하는 Controller와 비즈니스 로직과 데이터 처리가 결합된 Model의 단계로 나누어진 웹앱 개발 패턴이다.
+MVC패턴의 특징으로는 UI 렌더링을 포함하고 기존의 웹사이트 개발에 적합하다.
+이와 비교할 수 있는 REST API는 클라이언트와 서버 간의 데이터 통신을 위하여 API를 제공하는 것으로 특징은 View가 없이 JSON, XML 등 Data를 반환하고 클라이언트, 즉 웹이나 모바일 등에서 호출하며 HTTP Method를 활용한다는 것이다.
+Rest Api의 장점은 프론트엔드와 분리 개발이 가능하며 다양한 플랫폼에서 활용될 수 있다는 점이다.
+MVC 패턴은 내부 관리용 웹이나 회사 홈페이지, 전통적인 웹서비스에 적합하며 REST API는 모바일 앱 백엔드나 SPA 기반 프론트엔드, 외부 연동 서비스에 적합하다.
+HTTP Method는 여러가지로 구분되어지는데 서버의 리소스를 조회하는 Read 동작인 GET, 서버에 새로운 리소스를 생성하는 Create 동작 POST, 특정 리소스를 전체 업데이트하는 PUT, 특정 리소스를 부분 업데이트하는 PATCH, 서버에서 리소스를 삭제하는 DELETE로 구분된다.
+초창기에는 GET방식과 POST방식만 사용되었는데 초창기 웹은 HTML <form> 태그로 요청을 보냈는데 form 태그의 method는 GET과 POST방식만 지원하였기 때문이다.
+HTTP Method를 보내게 되면 정상 처리될 땐 OK() 200, 리소스를 찾을 수 없을 땐 NotFound() 404, 성공했지만 응답 본문이 없을 땐 NoContent() 204 등의 Http 응답 코드가 있으며 각각의 메서드는 IActionResult를 구현한 객체를 반환한다.
+
+2. 둘째날
+방명록 서비스
+CRUD 기능
+ASP.NET 구현 MVC 구현
+프로젝트 구성 예측
+(SQLite, EF core 사용)
+
+도구 - Nuget 패키지 관리자 - 패키지 관리자 콘솔
+Migration
+Add-Migration Init → 코드 변경 기록
+Update-Database → DB에 반영
