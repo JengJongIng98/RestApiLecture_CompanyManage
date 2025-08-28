@@ -11,6 +11,12 @@ builder.Services.AddDbContext<TodoContext>(options =>
 // REST API용 (View 없음)
 builder.Services.AddControllers();
 
+builder.Services.AddControllersWithViews();
+
+// 서비스 등록(builder)
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
@@ -24,6 +30,13 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
+// 미들웨어 등록 (app)
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
+
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
@@ -34,5 +47,7 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+
+app.MapControllers();
 
 app.Run();
