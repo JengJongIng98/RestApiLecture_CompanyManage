@@ -1,4 +1,4 @@
-﻿@{
+﻿@* @{
     ViewData["Title"] = "Rest Api Study";
 }
 
@@ -7,4 +7,22 @@
     <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div> *@
 
-<h1>Hello !!!</h1>
+
+
+
+@{
+    ViewData["Title"] = "Todo API 테스트";
+}
+
+<h1>Todo API 테스트</h1>
+
+<button onclick="getAllTodos()">전체 조회</button>
+<button onclick="getTodoById()">ID로 조회 (예: 1)</button>
+<button onclick="createTodo()">Todo 생성</button>
+<button onclick="updateTodo()">Todo 수정 (예: 1번)</button>
+<button onclick="deleteTodo()">Todo 삭제 (예: 1번)</button>
+
+<pre id="output" style="white-space: pre-wrap; border: 1px solid #ccc; padding: 10px; margin-top: 20px; max-height: 300px; overflow-y: scroll;"></pre>
+
+<!-- 외부 JS 파일 참조 -->
+<script src="~/js/todo.js"></script>
