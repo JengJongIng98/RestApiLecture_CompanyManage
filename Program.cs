@@ -5,11 +5,11 @@ using System;
 var builder = WebApplication.CreateBuilder(args);
 
 // SQLite 사용
-builder.Services.AddDbContext<TodoContext>(options =>
+builder.Services.AddDbContext<FileTreeContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 // REST API용 (View 없음)
-builder.Services.AddControllers();
+//builder.Services.AddControllers();
 
 builder.Services.AddControllersWithViews();
 
@@ -18,7 +18,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 // Add services to the container.
-builder.Services.AddControllersWithViews();
+//builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
 

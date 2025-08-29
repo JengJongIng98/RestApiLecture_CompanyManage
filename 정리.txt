@@ -29,3 +29,9 @@ ASP.NET 구현 MVC 구현
 Migration
 Add-Migration Init → 코드 변경 기록
 Update-Database → DB에 반영
+
+3. 넷째날
+ Rest API 어떤 문제를 해결하는데 적합한가
+ URI를 어떻게 표현해야지 데이터 + 프로세스
+ 왜 결과를 상태+데이터로 리턴하는가
+ (feat. RFC 7807(표준에러표기)를 왜 제정했는가?)
